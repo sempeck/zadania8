@@ -29,7 +29,9 @@ begin
   sort();
 
 // pisanie
-  for i:=1 to 50 do 
-    writeln(tablica[i]);
+  for i:=1 to 50 do
+      write(' ',tablica[i]);
+    
+    readln;
 
 end.
