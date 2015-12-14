@@ -5,8 +5,10 @@ var
   a,b,temp : String;
   i,n,m,x,y,plus,reszta : Integer;
   suma : array[1..100] of Integer;
+  tn : Char;
 
 begin
+repeat 
   writeln('a: ');
   readln(a);
   writeln('b: ');
@@ -23,7 +25,7 @@ begin
    m := length(b);
    reszta := 0;
 
-for i:=1 to length(a)+1 do
+for i:=1 to length(a) do
      begin
        plus := 0;
        x := StrToInt(a[n]);
@@ -41,14 +43,19 @@ for i:=1 to length(a)+1 do
              plus := plus-10;
              reszta := 1;
            end;
-
+        
         suma[i] := plus;
       end;
+
+    if (reszta = 1) then suma[i+1] := 1;
 
 write('Suma = ');
 for i:=length(a)+1 downto 1 do
   write(suma[i]);
-  readln;
+ writeln;
+ writeln('Jeszcze raz? (t/n)');
+ readln(tn);
 
+until tn = 'n';
 end.
 

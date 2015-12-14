@@ -11,7 +11,7 @@ begin
       el := (1/i);
       for j:=1 to i+1 do
         el := el*(-1);       
-        writeln(el:3:3);
+        writeln(el:3:2);
       suma := suma + el;
     end;
 end;
@@ -20,6 +20,6 @@ begin
   writeln('Podaj n: ');
   readln(n);
   szereg(n);
-    writeln('Suma szeregu: ', suma:3:3);
+    writeln('Suma szeregu: ', suma:3:2);
   readln;
 end.
