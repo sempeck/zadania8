@@ -3,7 +3,7 @@ program dodawanie;
 uses sysutils;
 var
   a,b,temp : String;
-  i,n,m,x,y,plus,reszta : Integer;
+  i,n,m,x,y,w,plus,reszta : Integer;
   suma : array[1..100] of Integer;
   tn : Char;
 
@@ -24,6 +24,7 @@ repeat
    n := length(a);
    m := length(b);
    reszta := 0;
+   w := 0;
 
 for i:=1 to length(a) do
      begin
@@ -47,10 +48,14 @@ for i:=1 to length(a) do
         suma[i] := plus;
       end;
 
-    if (reszta = 1) then suma[i+1] := 1;
+    if (reszta = 1) then 
+    begin
+     suma[i+1] := 1;
+     w := 1;
+     end;
 
 write('Suma = ');
-for i:=length(a)+1 downto 1 do
+for i:=length(a)+w downto 1 do
   write(suma[i]);
  writeln;
  writeln('Jeszcze raz? (t/n)');
